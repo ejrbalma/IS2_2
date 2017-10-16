@@ -19,13 +19,13 @@ public class JavaApplication2 {
      */
     public static void main(String[] args) {
 
-         
-        int[] vector = {1, 3, 5, 7, 9, 1, 5, 4, 3, 9,100,-4};
+          // Integer [] vector = {1, 3, 5, 7, 9, 1, 5, 4, 3, 9,100,-4};
+         String[] vector = {"Ana", "Juan", "Elena", "Elena", "Juan", "Ana", "Pedro"};
         
         Histogram mihisto = new Histogram(vector);
-        HashMap<Integer, Integer> histogram = mihisto.getHisto();
+        HashMap<String, Integer> histogram = mihisto.getHisto();
         
-        for (Integer key : histogram.keySet()) {
+        for (String key : histogram.keySet()) {
             System.out.println(key + " --> " + histogram.get(key));
         }
     
