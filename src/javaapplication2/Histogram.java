@@ -6,30 +6,23 @@
 
 package javaapplication2;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
-public class Histogram <T> {
+public class Histogram<T> {
 
-    private final T [] miVector;
+    private final Map<T,Integer> map = new HashMap<>();
 
-    public T [] getMivector() {
-        return miVector;
+    public Integer get(T key) {
+        return map.get(key);
     }
 
-    public Histogram(T [] mivector) {
-        this.miVector = mivector;
+    public Set<T> keySet() {
+        return map.keySet();
     }
-
-    public HashMap<T, Integer> getHisto() {
-
-        HashMap<T, Integer> histo = new HashMap<>();
-
-        for (T value : miVector) {
-            if (!histo.containsKey(value)) {
-                histo.put(value, 0);
-            }
-            histo.put(value, histo.get(value) + 1);
-        }
-        return histo;
+    
+    public Integer increment (T key){
+        return map.put(key, map.containsKey(key) ? get(key)+1 : 1);
     }
-
+    
 }
