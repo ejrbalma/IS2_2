@@ -9,13 +9,13 @@ import java.util.HashMap;
 
 public class Histogram {
 
-    private final int[] miVector;
+    private final Integer[] miVector;
 
-    public int[] getMivector() {
+    public Integer[] getMivector() {
         return miVector;
     }
 
-    public Histogram(int[] mivector) {
+    public Histogram(Integer[] mivector) {
         this.miVector = mivector;
     }
 
@@ -29,6 +29,7 @@ public class Histogram {
             }
             histo.put(value, histo.get(value) + 1);
         }
+        System.out.println("FIN");
         return histo;
     }
 
